@@ -1,85 +1,83 @@
-@charset "UTF-8";
-/*
-Colores
-    Background: #333
-
-    Tarjetas
-        Orange: hsl(31, 77%, 52%)
-        Cyan: hsl(184, 100%, 22%)
-        Dark cyan: hsl(179, 100%, 13%)
-
-    Texto
-        Blanco al 0.75 de opacidad
-
-Fuentes de la página
-    Títulos
-        https://fonts.google.com/specimen/Big+Shoulders+Display
-        Estilo 600
-    Textos
-        https://fonts.google.com/specimen/Lexend+Deca
-        Estilo 400
-*/
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: sans-serif;
-  text-align: center;
-  background-color: #333;
+  font-family: "Lexend Deca", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
 }
 
 .cards {
-  width: 90%;
-  height: 500px;
-  margin: 200px auto;
-  font-size: 0;
+  display: flex;
+  max-width: 768px;
+  min-width: 320px;
 }
 
 .card {
-  position: relative;
-  display: inline-block;
-  width: 300px;
-  text-align: left;
-  height: 100%;
-  padding-top: 3em;
-  padding-left: 2em;
-  font-size: 1rem;
   color: white;
-  font-family: "Lexend Deca", sans-serif;
+  padding: 2rem;
+  width: 25%;
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card.activa {
+  width: 50%;
+}
+
+.card:first-of-type {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.card:last-of-type {
+  border-radius: 0 1rem 1rem 0;
+}
+
+.card--orange {
+  background-color: hsl(31, 77%, 52%);
+}
+
+.card--cyan {
+  background-color: hsl(184, 100%, 22%);
+}
+
+.card--dark-cyan {
+  background-color: hsl(179, 100%, 13%);
 }
 
 .card__title {
   font-family: "Big Shoulders Display", cursive;
-  font-size: 2.5rem;
   text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 4rem;
 }
 
 .card__description {
-  width: 200px;
-}
-
-.card--orange {
-  background-color: #e38826;
-}
-
-.card--cyan {
-  background-color: #006970;
-}
-
-.card--dark-cyan {
-  background-color: #004241;
+  font-size: 14px;
+  margin-bottom: 4rem;
+  flex-grow: 1;
 }
 
 .card__cta {
-  position: absolute;
-  padding: 0.7em 2em;
-  background-color: #fff;
-  border-radius: 1.2em;
   text-decoration: none;
-  bottom: 50px;
+  background-color: rgb(255, 255, 255);
+  padding: 0.5rem 1rem;
+  border-radius: 1.2em;
+  font-size: 12px;
 }
 
 .card__cta--orange {
